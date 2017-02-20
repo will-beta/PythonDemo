@@ -1,7 +1,7 @@
 import datetime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine, Column, Integer, String, DateTime, JSON, ARRAY
+from sqlalchemy import MetaData, create_engine, Column, Integer, String, DateTime, JSON, ARRAY
 
 
 # 生成一个SqlORM基类
@@ -25,8 +25,13 @@ class Post(Base):
 
 # 引擎
 engine = create_engine('postgresql://postgres:postgres@localhost:5432/BlogDb')
+# 元数据
+metadata = MetaData(engine)
+
+
+
 # 创建数据表，如果数据表存在，则忽视
-Base.metadata.create_all(engine)
+metadata.create_all(engine)
 
 
 
