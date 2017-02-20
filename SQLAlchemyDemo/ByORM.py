@@ -23,15 +23,15 @@ class Post(Base):
     Author = Column(JSON, nullable=False)
 
 
-#引擎
+# 引擎
 engine = create_engine('postgresql://postgres:postgres@localhost:5432/BlogDb')
-# 创建所有表结构
+# 创建数据表，如果数据表存在，则忽视
 Base.metadata.create_all(engine)
 
 
 
 
-#创建与数据库的会话
+# 创建与数据库的会话
 DbSession = sessionmaker(bind=engine)
 session = DbSession()
 
