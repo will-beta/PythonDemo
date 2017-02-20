@@ -4,6 +4,10 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import MetaData, create_engine, Column, Integer, String, DateTime, JSON, ARRAY
 
 
+
+
+# 引擎
+engine = create_engine('postgresql://postgres:postgres@localhost:5432/BlogDb')
 # 生成一个SqlORM基类
 Base = declarative_base()
 
@@ -23,15 +27,9 @@ class Post(Base):
     Author = Column(JSON, nullable=False)
 
 
-# 引擎
-engine = create_engine('postgresql://postgres:postgres@localhost:5432/BlogDb')
-# 元数据
-metadata = MetaData(engine)
-
-
-
-# 创建数据表，如果数据表存在，则忽视
-metadata.create_all(engine)
+# 创建数据表
+Base.metadata.drop_all(engine)
+Base.metadata.create_all(engine)
 
 
 
