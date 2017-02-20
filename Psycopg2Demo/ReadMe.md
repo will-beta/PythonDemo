@@ -1,2 +1,2 @@
-×¢ÒâpeeweeÁ¬½ÓµÄPostgreSQLĞèÒª¼¯³Éhstore extension¡£
-ÈôÊ¹ÓÃpg in docker£¬¿ÉÏÂÔØ¡°aidanlister/postgres-hstore¡±¡£
+ï»¿æ³¨æ„peeweeè¿æ¥çš„PostgreSQLéœ€è¦é›†æˆhstore extensionã€‚
+è‹¥ä½¿ç”¨pg in dockerï¼Œå¯ä¸‹è½½â€œaidanlister/postgres-hstoreâ€ã€‚
