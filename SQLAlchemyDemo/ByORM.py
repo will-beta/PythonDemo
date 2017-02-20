@@ -35,7 +35,7 @@ Base.metadata.create_all(engine)
 
 
 # 创建与数据库的会话
-DbSession = sessionmaker(bind=engine)
+DbSession = sessionmaker(engine)
 session = DbSession()
 
 
